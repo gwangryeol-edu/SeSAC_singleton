@@ -36,10 +36,40 @@ public class ShopManager {
     }
 
     public Product[] searchProductsByName(String keyword) {
-        String[] search = new String[productCount];
-        for (product product : products) {
+        int count = 0;
+
+        Product[] searchProduct = new Product[productCount];
+        for (Product product : products) {
+            if (product.getName().toLowerCase().contains(keyword.toLowerCase())) {
+
+                searchProduct[count] = product;
+                count++;
+            }
 
         }
+        return searchProduct;
     }
 
+    public Product[] searchProductsByCategory(String category) {
+        int count = 0;
+
+        Product[] searchProduct = new Product[productCount];
+        for (Product product : products) {
+            if (product.getCategory().toLowerCase().contains(category.toLowerCase())) {
+
+                searchProduct[count] = product;
+                count++;
+            }
+        }
+        return searchProduct;
+    }
+
+    public void printAllProducts() {
+        int i = 0;
+        for (Product p : products) {
+
+            System.out.println((i + 1) + ". [" + p.getId() + "] " + p.getName() + " - " + p.getPrice() + "원 (재고: " + p.getStock() + "개)");
+            i++;
+        }
+    }
 }
