@@ -1,6 +1,6 @@
-package com.shop.model;
+package com.shop.manager;
 
-import com.shop.manager.Product;
+import com.shop.model.Product;
 
 public class ShopManager {
   public static void main(String[] args) {
@@ -16,10 +16,10 @@ public class ShopManager {
     Product product4 = new Product("키보드", 80000, 15, "전자기기");
 
 // 매니저에 등록
-    manager.addProduct(product1);
-    manager.addProduct(product2);
-    manager.addProduct(product3);
-    manager.addProduct(product4);
+    ShopManager.addProduct(product1);
+    ShopManager.addProduct(product2);
+    ShopManager.addProduct(product3);
+    ShopManager.addProduct(product4);
 
 //    >>> 시나리오 1: 초기 데이터 설정
 //
