@@ -127,8 +127,8 @@ public class ShopManager {
         System.out.println("------------------");
         System.out.println("총 금액: " + order.getTotalAmount() + "원");
         System.out.println("==================");
-        orders[orderCount] = order;
-        System.out.println("결제 완료");
+        orders[orderCount++] = order;
+        order.complete();
     }
 
     public Order findOrderById(String orderId) {
@@ -145,7 +145,6 @@ public class ShopManager {
 
     public void printAllOrders() {
         // 반복문으로 모든 주문 출력
-
         for (int i = 0; i < orderCount; i++) {
             Order order = orders[i];
             System.out.println((i+1) + ". [" + order.getOrderId() + "] " + order.getTotalAmount() + "원 (" + order.getStatus() + ")");

@@ -50,5 +50,14 @@ public class ShopApp {
         shopManager.addOrderItem(order, product4.getId(), 1);
 
         shopManager.processOrder(order);
+
+        System.out.println(">>> 시나리오 4: 전체 조회\n");
+
+// 전체 주문 출력
+        shopManager.printAllOrders();
+
+// 재고 현황 확인
+        System.out.println("\n=== 재고 현황 ===");
+        shopManager.printAllProducts();
     }
 }
