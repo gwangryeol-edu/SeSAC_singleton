@@ -9,7 +9,7 @@ public class ShopApp {
 
   public static void main(String[] args) {
     // 4가지 시나리오 실행
-
+    ShopManager shopManager = new ShopManager();
     //1. 초기 데이터 설정
     System.out.println(">>> 시나리오 1: 초기 데이터 설정\n");
 
@@ -20,7 +20,7 @@ public class ShopApp {
     Product product4 = new Product("키보드", 80000, 15, "전자기기");
 
 // 매니저에 등록
-    ShopManager.addProduct(product1);
+    shopManager.addProduct(product1);
     ShopManager.addProduct(product2);
     ShopManager.addProduct(product3);
     ShopManager.addProduct(product4);
@@ -78,6 +78,6 @@ public class ShopApp {
 //    2. [P2] 마우스 - 30000원 (재고: 18개)
 //    3. [P3] Java책 - 35000원 (재고: 10개)
 //    4. [P4] 키보드 - 80000원 (재고: 14개)
-
+    shopManager.findProductById();
   }
 }

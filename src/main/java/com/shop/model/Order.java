@@ -2,6 +2,7 @@ package com.shop.model;
 
 import com.shop.manager.ShopManager;
 import com.shop.utils.IdGenerator;
+import com.shop.model.Product;
 
 public class Order {
   private String orderId;           // 주문 ID (자동 생성)
@@ -33,8 +34,11 @@ public class Order {
 
   public void calculateTotal(ShopManager manager){
     this.totalAmount = 0;
-    for(String i : productIds){
 
+    for(int i = 0;  i < productIds.length ; i ++){
+      String id = Integer.toString(i);
+      Product product = manager.findProductById(id);
+      totalAmount += product.getPrice() * quantities[i];
     }
 
   }
