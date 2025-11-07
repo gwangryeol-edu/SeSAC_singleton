@@ -31,12 +31,12 @@ public class ShopApp {
         shopManager.printAllProducts();
 
         // 카테고리 검색
-//        System.out.println("\n[검색: 전자기기]");
-//        Product[] electronics = shopManager.searchProductsByCategory("전자기기");
-//        for (int i = 0; i < electronics.length; i++) {
-//            Product p = electronics[i];
-//            System.out.println((i + 1) + ". " + p.getName() + " - " + p.getPrice() + "원");
-//        }
+        System.out.println("\n[검색: 전자기기]");
+        Product[] electronics = shopManager.searchProductsByCategory("전자기기");
+        for (int i = 0; i < electronics.length; i++) {
+            Product p = electronics[i];
+            System.out.println((i + 1) + ". " + p.getName() + " - " + p.getPrice() + "원");
+        }
 
 //    >>> 시나리오 1: 초기 데이터 설정
 //
